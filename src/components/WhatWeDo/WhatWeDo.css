@@ -1,0 +1,311 @@
+/* ← add this — it's missing */
+.wwd-page {
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  text-align: center;
+  background: #0a1628;
+  border-top: 1px solid #cc9933;
+}
+
+/* ← add this too */
+.wwa-eyebrow {
+  display: block;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cc9933;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+
+.wwa-whatwedo-heading {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 600;
+  color: #eee9e6;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.wwa-whatwedo-desc {
+  font-size: 14px;
+  color: #eee9e6;
+  line-height: 1.8;
+}
+
+/* sections */
+.wwd-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+}
+
+.wwd-section {
+  padding: 2.5rem 0;
+  background:
+   radial-gradient(ellipse at 70% 50%, #3d351e 0%, transparent 75%),
+    radial-gradient(ellipse at 10% 90%, rgba(27, 48, 85, 0.9) 0%, transparent 50%);
+  border-bottom: 2px solid #cc9933;
+  
+    border-radius: 40px;
+    margin-bottom: 30px;
+    margin-inline: auto;
+    
+}
+
+
+
+.wwd-section-num {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cc9933;
+  margin-bottom: 0.5rem;
+}
+
+.wwd-section-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #cc9933;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.wwd-section-intro {
+  font-size: 14px;
+  color: #eee9e6;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+/* bullets */
+.wwd-bullets {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  row-gap: 2rem;
+column-gap: 1rem;
+
+
+
+}
+
+.wwd-bullet {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  
+ 
+}
+
+.wwd-bullet:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 300px;
+}
+
+.wwd-bullet-image-container {
+  border-radius: 25%;
+  background: linear-gradient(#eee9e6, white) padding-box,
+             linear-gradient(
+  135deg,
+  #7A4E00 0%,
+  #CC9933 50%,
+  #e9c06e 100%
+);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  
+}
+
+.wwd-bullet-image {
+  height: 40px;
+  width: 40px;
+}
+
+.wwd-bullet-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cc9933;
+  margin: 0 0 4px;
+}
+
+.wwd-bullet-desc {
+  font-size: 13px;
+  color: #eee9e6;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* tags */
+.wwd-tags {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+   gap: 12px;
+   justify-items: center;
+   margin-top: 2rem;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-5px); }
+  30%       { transform: translateX(5px); }
+  45%       { transform: translateX(-4px); }
+  60%       { transform: translateX(4px); }
+  75%       { transform: translateX(-2px); }
+  90%       { transform: translateX(2px); }
+}
+
+
+
+
+.wwd-tag {
+    animation: shake 2.5s ease infinite;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: linear-gradient(
+  135deg,
+  #7A4E00 0%,
+  #CC9933 50%,
+  #e9c06e 100%
+);
+
+  color: white;
+  border: 0.5px solid #afa9ec;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.wwd-tag i {
+  font-size: 11px;
+}
+
+/* Stagger each tag so they don't all shake at the same time */
+.wwd-tag:nth-child(1) { animation-delay: 0s; }
+.wwd-tag:nth-child(2) { animation-delay: 0.4s; }
+.wwd-tag:nth-child(3) { animation-delay: 0.8s; }
+
+/* mobile */
+@media (max-width: 767px) {
+ 
+  .wwd-section-title {
+    font-size: 18px;
+  }
+
+  .wwd-tags {
+    gap: 6px;
+  
+  }
+
+  .wwd-tag {
+    font-size: 11px;
+  }
+
+  .wwd-bullet:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 300px;
+  
+}
+
+}
+
+/* ── Add these to your existing WhatWeDo.css ── */
+
+/* Image break */
+.wwd-img-break {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  margin-block: 20px;
+}
+
+.wwd-img-break-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.wwd-img-break-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+   justify-content: flex-end;
+ background: linear-gradient(
+    to right,
+    rgba(5, 15, 30, 0.72) 0%,
+    rgba(5, 15, 30, 0.45) 65%,
+    rgba(5, 15, 30, 0.15) 85%,
+    rgba(5, 15, 30, 0) 100%
+  );
+}
+
+.wwd-img-break-overlay--right {
+  justify-content: flex-end;
+  
+}
+
+.wwd-img-break-overlay--left {
+  justify-content: flex-start;
+   justify-content: flex-start;
+  background: linear-gradient(
+    to right,
+    rgba(5, 15, 30, 0.9) 0%,
+    rgba(5, 15, 30, 0.5) 50%,
+    rgba(5, 15, 30, 0.05) 100%
+  );
+}
+
+.wwd-img-break-quote {
+  font-family: 'Georgia', serif;
+  font-size: clamp(16px, 1.8vw, 24px);
+  color: #EDE9E6;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 340px;
+  text-align: left;
+}
+
+.wwd-img-break-overlay--right .wwd-img-break-quote {
+  text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .wwd-img-break {
+    height: 260px;
+    margin-block: 12px;
+  }
+
+  .wwd-img-break-overlay {
+    padding: 24px;
+    justify-content: flex-end;
+  }
+
+  .wwd-img-break-quote {
+    text-align: center !important;
+    max-width: 100%;
+    font-size: 15px;
+  }
+}

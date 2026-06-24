@@ -1,0 +1,348 @@
+/* ── Page ── */
+.ind-page {
+  background-color: #0a1628;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
+  margin-top:-40px;
+  text-align: left;
+  overflow-x: hidden;
+}
+
+/* ── Hero ── */
+.ind-hero {
+  position: relative;
+  height: 55vh;
+  overflow: hidden;
+}
+
+.ind-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.ind-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(5, 15, 30, 0.85) 0%,
+    rgba(5, 15, 30, 0.5) 50%,
+    rgba(5, 15, 30, 0.2) 100%
+  );
+}
+
+.ind-hero-content {
+  position: absolute;
+  bottom: 80px;
+  left: 60px;
+  max-width: 560px;
+}
+
+.ind-hero-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #CC9933;
+  margin-bottom: 16px;
+}
+
+.ind-hero-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  color: #EDE9E6;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* ── Intro ── */
+.ind-intro {
+  padding: 80px 60px;
+  border-bottom: 1px solid #CC9933;
+  border-top: 1px solid #CC9933;
+  background:
+   radial-gradient(ellipse at 70% 50%, #3d351e 0%, transparent 85%),
+    radial-gradient(ellipse at 10% 90%, rgba(27, 48, 85, 0.9) 0%, transparent 50%);
+}
+
+.ind-intro-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.ind-intro-lead {
+  font-family: 'Georgia', serif;
+  font-size: clamp(18px, 2vw, 24px);
+  color: #EDE9E6;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.ind-intro-body {
+  font-size: 14px;
+  color: rgba(237, 233, 230, 0.65);
+  line-height: 1.85;
+}
+
+/* ── Industry sections ── */
+.ind-sections {
+  padding: 0 60px;
+}
+
+.ind-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 40px;
+  padding: 60px 0;
+  border-bottom: 2px solid #CC9933;
+  align-items: start;
+  max-width: 860px;
+  border-radius: 0 0 20px 20px;
+  padding-inline: 10px;
+  margin-top: 20px;
+}
+
+.ind-item--right {
+  margin-left: auto;
+  margin-right: 0;
+  background:
+    radial-gradient(ellipse at 70% 50%, #624d24 0%, transparent 65%),
+    radial-gradient(ellipse at 10% 80%, rgba(17, 36, 66, 0.9) 20%, transparent 80%);
+}
+
+.ind-item--left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ind-item-number {
+  font-family: 'Georgia', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(204, 153, 51, 0.2);
+  line-height: 1;
+  padding-top: 6px;
+  letter-spacing: -0.02em;
+}
+
+.ind-item-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 500;
+  color: #EDE9E6;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.ind-item-divider {
+  width: 40px;
+  height: 2px;
+   background: linear-gradient(135deg, #7A4E00, #CC9933);
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.ind-item-body {
+  font-size: 14px;
+  color: rgba(237, 233, 230, 0.65);
+  line-height: 1.85;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+.ind-item-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.ind-item-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #CC9933;
+  border: 1px solid rgba(204, 153, 51, 0.3);
+  border-radius: 3px;
+  padding: 5px 12px;
+}
+
+/* ── Mid-page image break ── */
+.ind-break {
+  margin: 60px 0;
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.ind-break-img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ind-break-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+.ind-break-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(5, 15, 30, 0.9) 0%,
+    rgba(5, 15, 30, 0.5) 50%,
+    rgba(5, 15, 30, 0.1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 80px;
+}
+
+.ind-break-text {
+  text-align: right;
+  max-width: 320px;
+}
+
+.ind-break-quote {
+  font-family: 'Georgia', serif;
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 400;
+  color: #EDE9E6;
+  font-style: italic;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.ind-break-sub {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #CC9933;
+}
+
+/* ── Closing ── */
+.ind-closing {
+  padding: 100px 60px;
+  border-top: 1px solid #CC9933;
+  border-bottom: 1px solid #CC9933;
+  background:
+   radial-gradient(ellipse at 70% 50%, #3d351e 0%, transparent 85%),
+    radial-gradient(ellipse at 10% 90%, rgba(27, 48, 85, 0.9) 0%, transparent 50%);
+    margin-top: 20px;
+}
+
+.ind-closing-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ind-closing-line {
+  width: 60px;
+  height: 3px;
+  background: #CC9933;
+  margin: 0 auto 32px;
+}
+
+.ind-closing-text {
+  font-family: 'Georgia', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  color: #EDE9E6;
+  line-height: 1.65;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.ind-closing-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #7A4E00 0%, #CC9933 50%, #e9c06e 100%);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ind-closing-btn:hover { opacity: 0.88; }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .ind-hero { height: 40vh; }
+
+  .ind-hero-content {
+    left: 24px;
+    bottom: 48px;
+    right: 24px;
+  }
+
+  .ind-intro {
+    padding: 48px 24px;
+  }
+
+  .ind-intro-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .ind-sections {
+    padding: 0 24px;
+  }
+
+  .ind-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 40px 10px;
+  }
+
+  .ind-item--right,
+  .ind-item--left {
+    
+    max-width: 100%;
+  }
+
+  .ind-item-number {
+    font-size: 32px;
+  }
+
+  .ind-break {
+    height: 320px;
+    margin: 40px 0;
+  }
+
+  .ind-break-overlay {
+    justify-content: center;
+    padding: 24px;
+    background: rgba(5, 15, 30, 0.65);
+  }
+
+  .ind-break-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .ind-closing {
+    padding: 60px 24px;
+  }
+}

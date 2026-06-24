@@ -1,0 +1,9 @@
+main {
+  padding-top: 120px;  /* ← all pages will have space for the header */
+  overflow-x: hidden;
+  background-color: #0a1628;
+}
+
+.root-layout {
+  
+}

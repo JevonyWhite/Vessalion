@@ -1,0 +1,440 @@
+/* ── Card wrapper ── */
+.opp-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0px;
+  position: relative;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  flex: 0 0 392px;
+  scroll-snap-align: start; /* ← add this */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 600px) {
+ 
+   
+  
+}
+
+/* ── Status badge ── */
+.opp-badge {
+  display: flex;
+ width: fit-content;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 15px 20px 15px 6px; /* ← rounded on left only */
+  clip-path: polygon(0 0, 88% 0, 100% 0%, 88% 100%, 0 100%);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: -1px;
+}
+
+.opp-badge-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.opp-badge--available {
+  background: #1a4a2e;
+  color: #fff;
+}
+.opp-badge--available .opp-badge-dot { background: #4caf6f; }
+
+.opp-badge--sold {
+  background: #8b1a1a;
+  color: #fff;
+  min-width: 150px; /* ← only affects sold badge */
+}
+.opp-badge--sold .opp-badge-dot { background: #ff6b6b; 
+}
+
+.opp-badge--contract {
+  background: #CC9933;
+  color: #fff;
+}
+.opp-badge--contract .opp-badge-dot { background: #fff; }
+
+/* ── Card body — two columns ── */
+.opp-card-body {
+  display: flex;
+  gap: 0;
+  flex: 1;
+}
+
+/* ── LEFT column ── */
+.opp-left {
+ flex: 1;              /* ← add this */
+  min-width: 0;         /* ← prevents overflow */
+  padding-inline: 10px;  /* ← add spacing from divider */;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.opp-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(14px, 2vw, 24px);
+  font-weight: 100;
+  color: #0d1b2a;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  text-align: left;
+  padding-top:20px
+}
+.opp-divider {
+background-color: #CC9933;
+  width: 48px;
+  height: 2.5px;
+  margin-bottom: 14px;
+}
+
+
+.opp-card--sold .opp-divider {
+  background-color: #8b1a1a;
+}
+
+
+
+.opp-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0d1b2a;
+}
+
+.opp-location svg {
+  color: #CC9933;
+  width: 20px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.opp-separator {
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 16px 0;
+}
+
+.opp-quantity {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.opp-qty-icon {
+  color: #CC9933;
+  height: 30px;
+  width: 30px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.opp-qty-label {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 4px;
+  
+}
+
+.opp-qty-value {
+  font-size: 22px;
+  font-weight: 400;
+  color: #CC9933;
+  line-height: 1;
+}
+
+.opp-card--sold .opp-qty-value { color: #8b1a1a; }
+.opp-card--available .opp-qty-value { color: #1a4a2e; }
+
+.opp-qty-unit {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* ── RIGHT column ── */
+.opp-right {
+  flex: 1;
+  min-width: 0;
+  padding-left: 5px;
+  padding-bottom: 16px;
+}
+
+.opp-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+.opp-detail-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #CC9933;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CC9933;
+  flex-shrink: 0;
+}
+
+.opp-detail-icon2{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.opp-detail-react-icon{
+  color: #CC9933;
+  flex-shrink: 0;
+  width: 24px;
+  height: 18px;
+  
+}
+
+.opp-card--sold .opp-detail-icon {
+  border-color: #8b1a1a;
+  color: #8b1a1a;
+}
+
+.opp-card--sold .opp-detail-react-icon{
+  border-color: #8b1a1a;
+  color: #8b1a1a;
+}
+
+
+
+
+
+
+.opp-detail-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 3px;
+}
+
+.opp-detail-value {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #0d1b2a;
+}
+
+.opp-detail-value--sold { color: #8b1a1a; }
+.opp-detail-value--mono {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.opp-detail-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 0;
+}
+
+/* ── Checkmarks ── */
+.opp-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 8px;
+  margin-top: 14px;
+}
+
+.opp-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #0d1b2a;
+}
+
+.opp-check-icon { color: #CC9933; flex-shrink: 0; }
+.opp-card--sold .opp-check-icon { color: #8b1a1a; }
+.opp-card--available .opp-check-icon { color: #1a4a2e; }
+
+/* ── Footer CTA ── */
+.opp-footer {
+  margin-top: 20px;
+  margin-bottom: -2px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 16px 16px;
+}
+
+.opp-footer--sold { background: #8b1a1a; }
+.opp-footer--available { 
+  background:#1a4a2e;
+  /* background: linear-gradient(
+  135deg,
+  #7A4E00 0%,
+  #CC9933 50%,
+  #e9c06e 100%
+)  */
+
+}
+.opp-footer--contract { background: #CC9933; }
+
+.opp-footer-sold {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.opp-footer-btn {
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* ── SOLD stamp ── */
+.opp-stamp {
+  position: absolute;
+  bottom: 28px;
+  right: 2px;
+  transform: rotate(-15deg);
+  border: 3px solid rgba(139, 26, 26, 0.7);
+  border-radius: 4px;
+  padding: 6px 14px;
+  pointer-events: none;
+}
+
+.opp-stamp span {
+  font-size: 16px;
+  font-weight: 900;
+  color: rgba(139, 26, 26, 0.7);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Georgia', serif;
+}
+
+@media (max-width:500px){
+  .opp-badge{
+    padding-inline: 18px;
+    font-size: 11px;
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .opp-card {
+    flex: 0 0 75vw; /* was 90vw */
+    max-width: 75vw;
+  }
+
+   .opp-left {
+    min-width: 140px;  /* ← smaller min-width on mobile */
+  }
+  .opp-divider {
+    margin-bottom: 8px; /* was 14px */
+  }
+
+  .opp-separator {
+    margin: 8px 0; /* was 16px 0 */
+  }
+
+   .opp-detail-row {
+    padding: 5px 0; /* was 10px 0 */
+  }
+
+  .opp-detail-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .opp-detail-icon2 {
+    width: 28px;
+    height: 28px;
+  }
+
+  .opp-title {
+    font-size: 14px;
+    padding-top: 10px;
+  }
+
+  .opp-qty-value {
+    font-size: 18px;
+  }
+
+  .opp-badge {
+    font-size: 9px;
+    padding: 8px 14px;
+  }
+
+  .opp-checks {
+    gap: 3px;       /* was 6px */
+    margin-top: 8px; /* was 14px */
+  }
+
+   .opp-right {
+    padding-bottom: 0; /* was 16px */
+  }
+
+  .opp-footer {
+    margin-top: 0; /* was 20px */
+    padding: 10px;
+  }
+
+  .opp-check {
+    font-size: 9px;
+  }
+
+  .opp-detail-value {
+    font-size: 10px;
+  }
+
+  .opp-detail-label {
+    font-size: 8px;
+  }
+
+
+  .opp-footer-btn {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+   .opp-qty-label {
+    margin-bottom: 2px; /* was 4px */
+  }
+
+  .opp-card-body {
+    gap: 0;
+  }
+}

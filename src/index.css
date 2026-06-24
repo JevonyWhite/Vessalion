@@ -1,0 +1,29 @@
+:root {
+color: black;
+background: #EDE9E6;
+
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  box-sizing: border-box;
+
+}
+
+body::-webkit-scrollbar {
+  display: none;               /* Chrome/Safari */
+}
+
+
