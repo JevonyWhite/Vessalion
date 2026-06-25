@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../Contact/Contact.css";
 import PortImage from "../../assets/BodyImages/Second set/Major Port Terminal.png";
 import useScrollReveal from "../../components/ScrollReveal/ScrollReveal";
@@ -10,6 +11,10 @@ import { FaFlaskVial } from "react-icons/fa6";
 import { FaUserCheck } from "react-icons/fa6";
 import { IoShieldCheckmark } from "react-icons/io5";
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     entityName: "",
@@ -20,6 +25,8 @@ const Contact = () => {
     allocation: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const [heroRef, heroVisible] = useScrollReveal();
   const [badgesRef, badgesVisible] = useScrollReveal();
@@ -29,10 +36,34 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          entity_name: formData.entityName,
+          corporate_url: formData.corporateUrl,
+          email: formData.email,
+          telephone: formData.telephone,
+          asset_class: formData.assetClass,
+          allocation: formData.allocation,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+      setSubmitted(true);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError(
+        "Submission failed. Please try again or email us directly at procurement@vessalion.com",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -54,9 +85,7 @@ const Contact = () => {
             Connect With
             <br />
             Us
-            
           </h1>
-         
         </div>
       </div>
 
@@ -259,8 +288,19 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit" className="contact-submit-btn">
-                  Submit secure inquiry
+                <button
+                  type="submit"
+                  className="contact-submit-btn"
+                  disabled={sending}
+                >
+                  {sending ? (
+                    <>
+                      Sending
+                      <span className="dots" />
+                    </>
+                  ) : (
+                    "Submit secure inquiry"
+                  )}
                 </button>
 
                 <div className="contact-lock-note">
