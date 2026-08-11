@@ -75,10 +75,10 @@ const Footer = ({ menuOpen, setMenuOpen }) => {
               <i className="ti ti-mail" aria-hidden="true" />
               contact@vessalion.com
             </li>
-            <li>
+            {/* <li>
               <i className="ti ti-phone" aria-hidden="true" />
               (786) 701-6181
-            </li>
+            </li> */}
             <li>
               <i className="ti ti-map-pin" aria-hidden="true" />
               Wyoming, USA

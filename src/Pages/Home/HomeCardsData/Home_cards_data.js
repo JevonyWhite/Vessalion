@@ -4,10 +4,10 @@ const cards = [
   {
     id: 1,
     status: "available",
-    title: "Leucoxene Allocation",
+    title: "Rutile Allocation",
     location: "West Africa",
     quantity: "60,000",
-    grade: "86% TiO₂",
+    grade: "95.1% TiO₂",
     pricing: "Available Upon Request",
     reference: "VESS-ALLOC-LX-27",
     checks: [
@@ -17,10 +17,10 @@ const cards = [
    {
     id: 2,
     status: "available",
-    title: "Ilmenite Allocation",
+    title: "Ilmenite - Rutile Concentrate",
     location: "West Africa",
     quantity: "50,000",
-    grade: "47% TiO₂",
+    grade: "53.2% TiO₂",
     pricing: "Available Upon Request",
     reference: "VESS-ALLOC-IL-24",
     checks: [

@@ -1,8 +1,8 @@
 const OPPORTUNITIES = [
   {
     id: "LX",
-    name: "Leucoxene",
-    grade: "86% TiO₂",
+    name: "Rutile",
+    grade: "95.1% TiO₂",
     region: "West Africa",
     masterRef: "VESS-ALLOC-LX-26",
     masterQty: "60,000 MT",
@@ -21,8 +21,8 @@ const OPPORTUNITIES = [
   },
   {
     id: "IL",
-    name: "Ilmenite",
-    grade: "47% TiO₂",
+    name: "Ilmenite - Rutile Concentrate",
+    grade: "53.2% TiO₂",
     region: "West Africa",
     masterRef: "VESS-ALLOC-IL",
     masterQty: "50,000 MT",
